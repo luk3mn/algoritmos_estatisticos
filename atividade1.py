@@ -1,4 +1,6 @@
-# Suponha que 20 alunos responderam quatões conforme o row das notas de 4 a 8
+# Suponhamos que os números de questões respondidas corretamente 
+# por 20 alunos de psicologia em uma prova de estatística foram 
+# os seguintes:
 # 7 6 7 6 7
 # 4 5 7 5 8
 # 6 5 5 7 8

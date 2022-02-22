@@ -20,16 +20,16 @@ def variancia(funcionario):
 
     va = 0
     for i in funcionario:
-        va = va + pow(i - mA, 2)
-    varAmostral = va / len(funcA)
+        va = va + pow((i - mA), 2)
+    varAmostral = va / (len(funcA)-1)
     return round(varAmostral, 2)
 
 
 print("\nVARIÂNCIA")
-print("Funcionário A:", variancia(funcA))  # 2.0
-print("Funcionário B:", variancia(funcB))  # 5.36
-print("Funcionário C:", variancia(funcC))  # 1.84
-print("Funcionário D:", variancia(funcD))  # 6.0
+print("Funcionário A:", variancia(funcA))  # 1,58
+print("Funcionário B:", variancia(funcB))  # 2,59
+print("Funcionário C:", variancia(funcC))  # 1,52
+print("Funcionário D:", variancia(funcD))  # 2,74
 
 
 # 2) Desvio padrão amostral

@@ -1,5 +1,4 @@
 import math
-import numbers
 import statistics
 rows = [7, 6, 7, 6, 7, 4, 5, 7, 5, 8, 6, 5, 5, 7, 8, 4, 7, 7, 7, 6]
 # Medidas de tendencia central
@@ -91,9 +90,6 @@ print("\n------         SEPARATRIZES         ------")
 print("Quartil: ")
 print("==========================================")
 
-print("variancia: ", statistics.variance(rows))
-print("desvio padrão: ", statistics.stdev(rows))
-
 print("\nVALIDANDO COM AS FUNÇÕES ESTATÍSTICAS DO PYTHON")
 print("Média: ", statistics.mean(rows))
 print("Mediana: ", statistics.median(rows))
@@ -101,3 +97,4 @@ print("Moda: ", statistics.mode(rows))
 print("-----------------")
 print("Variancia: ", statistics.variance(rows))
 print("Desvio Padrão: ", statistics.stdev(rows))
+print("-----------------")

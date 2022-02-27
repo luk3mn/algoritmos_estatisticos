@@ -76,6 +76,25 @@ def desvio_medio_absoluto(dados):
 
 # Separatrizes
 # - Quartil
+# Fonte: https://edtisensei.zendesk.com/hc/pt-br/articles/360050448172-C%C3%A1lculo-dos-quartis
+# 1. Separar os dois lados do array a partir da mediana
+# 2. Colocalos en um novo array cada
+# 3. tentar encontrar a mediana de cada um
+def qualtil(dados):
+  dados.sort()
+  n = len(dados)
+  q1=[]; q3=[]
+  index = (n+1)/2
+  for i in range(n):
+    if i < (index-1):
+      q1.append(dados[i])
+    if i > (index-1):
+      q3.append(dados[i])
+  primQuantil = statistics.median(q1)
+  segQuantil = statistics.median(dados)
+  tercQuantil = statistics.median(q3)
+
+  return primQuantil, segQuantil, tercQuantil
 
 print("\n==========================================")
 print("------ MEDIDAS DE TENDÊNCIA CENTRAL ------")
@@ -87,7 +106,9 @@ print("Vairancia Amostral: ", variancia_amostral(rows))
 print("Desvio Padrão Amostral: ", desvio_padrao(variancia_amostral(rows)))
 print("Desvio Médio Absoluto: ", desvio_medio_absoluto(rows))
 print("\n------         SEPARATRIZES         ------")
-print("Quartil: ")
+print("Primeiro Quartil: ",qualtil(rows)[0])
+print("Segundo  Quartil: ",qualtil(rows)[1])
+print("Terceito Quartil: ",qualtil(rows)[2])
 print("==========================================")
 
 print("\nVALIDANDO COM AS FUNÇÕES ESTATÍSTICAS DO PYTHON")
@@ -98,3 +119,21 @@ print("-----------------")
 print("Variancia: ", statistics.variance(rows))
 print("Desvio Padrão: ", statistics.stdev(rows))
 print("-----------------")
+
+# print("\n",qualtil([1,2,3,4,5,6,7,8,9,10,11,12,13,13,13,30,31]))
+# print("\n",qualtil([12,11,3,2,4,7,8,1,1,20,21,31,13,14,17,19,20]))
+# print("\n[1 a  4] ->",qualtil([1,2,3,4]))
+# print("[1 a  5] ->",qualtil([1,2,3,4,5]))
+# print("[1 a  6] ->",qualtil([1,2,3,4,5,6]))
+# print("[1 a  7] ->",qualtil([1,2,3,4,5,6,7]))
+# print("[1 a  8] ->",qualtil([1,2,3,4,5,6,7,8]))
+# print("[1 a  9] ->",qualtil([1,2,3,4,5,6,7,8,9]))
+# print("[1 a 10] ->",qualtil([1,2,3,4,5,6,7,8,9,10]))
+# print("[1 a 11] ->",qualtil([1,2,3,4,5,6,7,8,9,10,11]))
+# print("[1 a 12] ->",qualtil([1,2,3,4,5,6,7,8,9,10,11,12]))
+# print("[1 a 13] ->",qualtil([1,2,3,4,5,6,7,8,9,10,11,12,13]))
+# print("[1 a 14] ->",qualtil([1,2,3,4,5,6,7,8,9,10,11,12,13,14]))
+# print("[1 a 15] ->",qualtil([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]))
+# print("[1 a 16] ->",qualtil([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]))
+# print("[1 a 17] ->",qualtil([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]))
+# print("[1 a 18] ->",qualtil([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]))
